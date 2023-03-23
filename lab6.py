@@ -2,6 +2,8 @@
 # password = password
 # loop menu
 from decoder import *
+
+
 def menu():
     print("Menu\n-------------")
     print("1. Encode\n2. Decode\n3. Quit")
@@ -9,9 +11,9 @@ def menu():
 
 
 def password_encode(password):
-    encoded = password
+    encoded = str(password)
     for digit in password:
-        encoded = int(password(digit)) + 3 % 10
+        encoded += int(password(digit)) + 3 % 10
     return encoded
 
 
@@ -22,8 +24,8 @@ while True:
         password = int(input("Please enter your password to encode: "))
         print("Your password has been encoded and stored!\n")
     if yolo == 2:
-        password = password_encode(password)
-        print(f'The encoded password is {password}, and the original password is {decode(str(password))}\n')
+        encoded = password_encode(password)
+        print(f'The encoded password is {encoded}, and the original password is {decode(str(password))}\n')
     if yolo == 3:
         break
 
