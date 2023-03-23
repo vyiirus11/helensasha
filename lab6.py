@@ -1,6 +1,7 @@
 # username = user
 # password = password
 # loop menu
+from decoder import *
 def menu():
     print("Menu\n-------------")
     print("1. Encode\n2. Decode\n3. Quit")
@@ -22,5 +23,7 @@ while True:
         print("Your password has been encoded and stored!\n")
     if yolo == 2:
         password = password_encode(password)
-        print(f'The encoded password is {password_encode(encoded)}, and the original password is {password}\n')
+        print(f'The encoded password is {password}, and the original password is {decode(str(password))}\n')
+    if yolo == 3:
+        break
 
